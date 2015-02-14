@@ -34,8 +34,8 @@ func TestDocument(t *testing.T) {
 	if c.Bust() != 90 {
 		t.Errorf("Unexpected Wikipedia.Bust: %d", c.Bust())
 	}
-	if c.Waste() != 58 {
-		t.Errorf("Unexpected Wikipedia.Waste: %d", c.Waste())
+	if c.Waist() != 58 {
+		t.Errorf("Unexpected Wikipedia.Waist: %d", c.Waist())
 	}
 	if c.Hip() != 85 {
 		t.Errorf("Unexpected Wikipedia.Hip: %d", c.Hip())

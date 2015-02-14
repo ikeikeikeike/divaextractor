@@ -136,7 +136,7 @@ func (w *Wikipedia) Bust() (r int) {
 	return
 }
 
-func (w *Wikipedia) Waste() (r int) {
+func (w *Wikipedia) Waist() (r int) {
 	bhw := strings.Split(w.BWH(), "-")
 	if len(bhw) > 1 {
 		r, _ = convert.StrTo(str.Clean(strings.Split(w.BWH(), "-")[1])).Int()
