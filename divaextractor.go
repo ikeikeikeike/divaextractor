@@ -10,6 +10,7 @@ import (
 	"time"
 
 	gq "github.com/PuerkitoBio/goquery"
+	"github.com/ikeikeikeike/go-bracmeister"
 	"github.com/ikeikeikeike/gopkg/convert"
 	behavior "github.com/ikeikeikeike/gopkg/net/http"
 	"github.com/ikeikeikeike/gopkg/str"
@@ -158,6 +159,13 @@ func (w *Wikipedia) Bracup() (r string) {
 		text := s.Next().Text()
 		if re.MatchString(text) {
 			r = str.Clean(strings.ToUpper(string([]rune(text)[0])))
+		}
+		if r == "" {
+			h, b, w := w.Height(), w.Bust(), w.Waist()
+			if h > 10 && b > 10 && w > 10 {
+				r = bracmeister.Calc(h, b, w, true).Cup
+				r = strings.ToUpper(str.Clean(r))
+			}
 		}
 	})
 	return
