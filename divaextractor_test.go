@@ -11,7 +11,7 @@ func TestDocument(t *testing.T) {
 	}
 
 	if c.Birthday().Unix() != 591753600 {
-		t.Errorf("Unexpected Wikipedia.Birthday: %s", c.Birthday())
+		t.Errorf("Unexpected Wikipedia.Birthday: %s(%d)", c.Birthday(), c.Birthday().Unix())
 	}
 
 	if c.Blood() != "A" {
