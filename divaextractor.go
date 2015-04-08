@@ -160,13 +160,13 @@ func (w *Wikipedia) Bracup() (r string) {
 		if re.MatchString(text) {
 			r = str.Clean(strings.ToUpper(string([]rune(text)[0])))
 		}
-		if r == "" {
-			h, b, w := w.Height(), w.Bust(), w.Waist()
-			if h > 10 && b > 10 && w > 10 {
-				r = bracmeister.Calc(h, b, w, true).Cup
-				r = strings.ToUpper(str.Clean(r))
-			}
-		}
 	})
+	if r == "" {
+		h, b, w := w.Height(), w.Bust(), w.Waist()
+		if h > 10 && b > 10 && w > 10 {
+			r = bracmeister.Calc(h, b, w, true).Cup
+			r = strings.ToUpper(str.Clean(r))
+		}
+	}
 	return
 }
